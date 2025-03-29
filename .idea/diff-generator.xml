@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DiffGenerationConfig">
-    <option name="sourceModelValue" value="demo:hibernate.cfg.xml" />
-    <option name="updateChangeLogPath" value="src/main/resources/log4j2.xml" />
+    <option name="snapshotDb" value="false" />
+    <option name="snapshotModelValue" value="hibernateproject:hibernate.cfg.xml" />
+    <option name="sourceModelValue" value="hibernateproject:hibernate.cfg.xml" />
+    <option name="updateChangeLogPath" value="src/main/resources/db/changelog/2025/03/20-01-changelog.xml" />
     <option name="updateDbConnectionName" value="1c23afd1-4496-4182-8a34-30ded88bb4ad" />
+    <option name="updateLogLevel" value="DEBUG" />
   </component>
 </project>

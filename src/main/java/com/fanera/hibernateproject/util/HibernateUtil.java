@@ -1,14 +1,25 @@
 package com.fanera.hibernateproject.util;
 
+import com.fanera.hibernateproject.model.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
-    private static SessionFactory sessionFactory;
-    public static SessionFactory getSessionFactory() {
-        if (sessionFactory == null) {
-            sessionFactory = new Configuration().configure().buildSessionFactory();
+    private static final SessionFactory sessionFactory;
+    static {
+        try {
+            sessionFactory = new Configuration()
+                    .addAnnotatedClass(Professeur.class)
+                    .addAnnotatedClass(Salle.class)
+                    .addAnnotatedClass(Occuper.class)
+                    .buildSessionFactory();
+        }catch (Throwable e){
+            System.err.println("Initialization failed :" + e);
+            throw new ExceptionInInitializerError();
         }
+    }
+
+    public static SessionFactory getSessionFactory(){
         return sessionFactory;
     }
 }

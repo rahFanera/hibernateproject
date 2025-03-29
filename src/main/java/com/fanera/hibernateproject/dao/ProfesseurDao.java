@@ -13,10 +13,6 @@ public class ProfesseurDao {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            System.out.println("codeprof: " + professeur.getCodeprof());
-            System.out.println("nom: " + professeur.getNom());
-            System.out.println("prenom: " + professeur.getPrenom());
-            System.out.println("grade: " + professeur.getGrade());
             session.persist(professeur);
             transaction.commit();
         } catch (Exception e) {
